@@ -1,0 +1,22 @@
+class Solution {
+    int c=0,p=0,m=0;
+    public int balancedStringSplit(String s) {
+        for(int i=0;i<s.length();i++){
+            {
+            if(s.charAt(i)=='R'){
+                p++;
+            }
+            else{
+                m++;
+            }
+        }
+            if(p==m){
+                c++;
+                p=0;
+                m=0;
+        }
+            
+        }
+        return c;
+    }    
+    }
