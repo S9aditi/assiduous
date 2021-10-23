@@ -1,0 +1,22 @@
+class Solution {
+    String temp="";
+    public String sortSentence(String s) {
+    String[] str = s.split(" ");
+        String[] a= new String[str.length];
+   for(int i=0;i<str.length;i++){
+     char p=(str[i].charAt((str[i].length())-1));
+       p--;
+       System.out.println(p);
+       int r=Character.getNumericValue(p);
+       
+     a[r]=(str[i].substring(0,(str[i].length()-1)));
+        System.out.println(a[r]);
+       
+   }
+        for(int i=0;i<str.length;i++){
+            temp=temp+a[i]+" ";
+        }
+        
+    return temp.trim();
+    }
+}
