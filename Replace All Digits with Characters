@@ -1,0 +1,16 @@
+lass Solution {
+    String m="";
+    public String replaceDigits(String s) {
+        char[] a=s.toCharArray();
+        for(int i=0;i<s.length();i++){
+            if(i%2!=0){
+                char p=(char)((int)a[i-1]+Character.getNumericValue(a[i]));
+                m=m+p;
+            }
+            else{
+                m=m+a[i];
+            }
+        }
+       return m; 
+    }
+}
