@@ -1,0 +1,23 @@
+class Solution {
+    String s="";
+    int c=0,p=0;
+    public int canBeTypedWords(String text, String brokenLetters) {
+        text=text+" ";
+    for(int i=0;i<text.length();i++){
+        if(text.charAt(i)!=' '){
+            s=s+text.charAt(i);
+        }
+        else{
+            c++;
+            for(int j=0;j<brokenLetters.length();j++){
+            for(int k=0;k<s.length();k++){
+                if(brokenLetters.charAt(j)==s.charAt(k)){
+                  p++;
+                    s="";
+                }
+        }
+    }
+            s="";
+    }
+    }
+        return c-p;
