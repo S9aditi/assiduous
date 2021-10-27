@@ -1,0 +1,32 @@
+class Solution {
+    String s="";
+    int i=0,j=0;
+    public String mergeAlternately(String word1, String word2) {
+        int p=Math.min(word1.length(),word2.length());
+        int h=p+p;
+    for(int k=0;k<h;k++){
+            if(k%2==0){
+             s=s+word1.charAt(i);
+                    i++;
+                }
+                else{
+             s=s+word2.charAt(j);
+            j++;
+              }   
+                }
+        System.out.println(word1.length());
+        if(word1.length()>word2.length()){
+        for(int a=p;a<word1.length();a++){
+            s=s+word1.charAt(a);
+            }
+        }
+                else{
+                    for(int a=p;a<word2.length();a++){
+             s=s+word2.charAt(j);
+            j++;
+            }
+                }
+        return s;
+    }
+    }
+
