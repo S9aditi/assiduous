@@ -1,0 +1,50 @@
+class Solution {
+    int c=0,h=0,p=0;
+    String s="";
+     public int countValidWords(String sentence) {
+        sentence=sentence+" ";
+        for(int i=0;i<sentence.length();i++){
+            if(sentence.charAt(i)!=' '){
+                s=s+sentence.charAt(i);
+            }
+            else{
+                if(s.length()!=0){
+                 for(int j=0;j<s.length();j++){
+                     if(!Character.isDigit(s.charAt(j))){
+                    if(Character.isLowerCase(s.charAt(j))) {
+                        c++;
+                    }
+                else if(j>0&&j<s.length()-1&&Character.isLowerCase(s.charAt(j-1))&&s.charAt(j)=='-'&&Character.isLowerCase(s.charAt(j+1))&& h==0){
+                        h++;
+                        c++;
+                    }
+                    else if(j==s.length()-1){
+                        if (s.charAt(j)==','||
+                            s.charAt(j)=='.'||
+                            s.charAt(j)=='!'){
+                        c++;
+                    }
+                    }
+                    else{
+                        break;
+                    }
+                }
+                 }  
+                if(c==s.length()){
+                    p++;
+                    c=0;
+                    s="";
+                    h=0;
+                }
+                else{
+                    c=0;
+                    s="";
+                    h=0;
+                }
+            }
+            }
+        }
+        
+         return p;
+    }
+}
