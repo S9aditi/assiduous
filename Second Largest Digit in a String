@@ -1,0 +1,39 @@
+class Solution {
+    String st="";
+    char p;
+    int n=0;
+    public int secondHighest(String s) {
+        for(int k=0;k<s.length();k++){
+        if(Character.isDigit(s.charAt(k))){
+            st=st+s.charAt(k);
+        }
+            }
+        char[] a=st.toCharArray();
+        char t= ' ';
+        for (int i = 0; i < st.length(); i++) {
+            for (int j = i + 1; j < st.length(); j++) {
+                if (a[i] > a[j]) {
+                    t = a[i];
+                    a[i] = a[j];
+                    a[j] = t;
+                }
+            }
+        }
+        String m=String.valueOf(a);
+        for(int l=m.length()-1;l>0;l--){
+            if(m.charAt(l)!=m.charAt(l-1)){
+             p= m.charAt(l-1);
+             break;
+                }
+            else{
+                n++;
+            }
+        }
+        if(n!=m.length()){
+            return Character.getNumericValue(p);  
+        }
+     else{
+         return -1;
+     }
+    }
+}
