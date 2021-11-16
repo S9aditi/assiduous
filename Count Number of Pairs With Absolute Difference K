@@ -1,0 +1,17 @@
+class Solution {
+    int x,c=0,i=0;
+    public int countKDifference(int[] nums, int k) {
+        while(i<nums.length-1){
+            for(int j=i+1;j<nums.length;j++){
+            if(i<j){
+                x=nums[i]-nums[j];
+                if(Math.abs(x)==k){
+                    c++;
+                }
+            }
+            }
+          i++; 
+        }
+        return c;
+    }
+}
