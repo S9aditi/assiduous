@@ -1,0 +1,23 @@
+class Solution {
+    int temp=0,r=0;
+    public int findGCD(int[] nums) {
+         for(int i=0; i<nums.length; i++)  
+       {  
+           for(int j=i+1; j<nums.length; j++)  
+           {  
+               if(nums[i] > nums[j])  
+               {  
+                   temp = nums[i];  
+                   nums[i] = nums[j];  
+                   nums[j] = temp;  
+               }  
+           }  
+       }
+        for(int k=1;k<=nums[nums.length-1];k++){
+            if(nums[0]%k==0 &&nums[nums.length-1]%k==0){
+                r=k;
+            }
+        }
+        return r;
+    }
+}
