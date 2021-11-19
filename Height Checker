@@ -1,0 +1,27 @@
+class Solution {
+    public int heightChecker(int[] heights) {
+        int c=0,temp=0;
+        int[] exp=new int[heights.length];
+        for(int i=0;i<heights.length;i++){
+            exp[i]=heights[i];
+        }
+       for(int i=0; i<heights.length; i++)  
+       {  
+           for(int j=i+1; j<heights.length; j++)  
+           {  
+               if(heights[i] > heights[j])  
+               {  
+                   temp = heights[i];  
+                   heights[i] = heights[j];  
+                   heights[j] = temp;  
+               } 
+                }
+           }
+        for(int k=0;k<heights.length;k++){
+           if (exp[k]!=heights[k]){
+           c++;
+        }
+        }
+        return c;
+    }
+}
