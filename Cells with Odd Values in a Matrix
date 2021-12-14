@@ -1,0 +1,29 @@
+class Solution {
+    int j=0,r=1,c=0;
+    public int oddCells(int m, int n, int[][] indices) {
+        int[][] mat=new int[m][n];
+        for(int i=0;i<m;i++){
+           for(int j=0;j<n;j++){
+               mat[i][j]=0;
+           }
+        }
+        for(int k=0;k<indices.length;k++){
+                int a=indices[k][0];
+                for(int p=0;p<n;p++){
+                    mat[a][p]=mat[a][p]+1;
+                }
+                 int s=indices[k][r];
+                    for(int p=0;p<m;p++){
+                        mat[p][s]=mat[p][s]+1;
+                    }
+                }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(mat[i][j]%2!=0){
+                    c++;
+                }
+            }
+        }
+        return c;
+    }
+}
