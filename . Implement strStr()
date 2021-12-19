@@ -1,0 +1,24 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int p=0;
+        if(needle.length()>0){
+          if(haystack.length()>0&&haystack.length()>=needle.length()){
+            for(int i=0;i<=haystack.length()-needle.length();i++){
+                if(needle.equals(haystack.substring(i,i+needle.length()))){
+                    p=i;
+                    break;
+                }
+                
+                else{
+                    p=-1;
+                }
+            }
+        
+          }
+            else{
+                p=-1;
+            }
+        }
+        return p;
+    }
+}
