@@ -1,0 +1,24 @@
+class Solution {
+    public boolean rotateString(String s, String goal) {
+        int p=-1;
+        if(s.length()==goal.length()){
+            if(s.equals(goal)){
+                p=0;
+            }
+            else{
+            for(int i=1;i<s.length();i++){
+                if(goal.equals(s.substring(i,s.length())+s.substring(0,i))){
+                    p=0;
+                    break;
+                }
+            }
+            }
+        }
+        if(p==-1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+}
