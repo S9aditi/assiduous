@@ -1,0 +1,22 @@
+class Solution {
+    int s=0;
+    public boolean isHappy(int n) {
+        if(n==1){
+            return true;
+        }
+        if (n==4){
+          return false;
+        }
+            return isHappy(number(n));
+    }
+    public int number(int r){
+             s=0;
+            while(r>0){
+                int p=r%10;
+                s=s+p*p;
+                r=r/10;
+            }
+            return s;
+        }
+    }
+    
