@@ -1,0 +1,11 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        int s=0,p=0;
+        for(int i=0;i<=nums.length;i++){
+            s=s+i;
+            if(i<nums.length)
+             p=p+nums[i];
+        }
+         return s-p;
+    }
+}
