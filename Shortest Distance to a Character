@@ -1,0 +1,38 @@
+class Solution {
+    public int[] shortestToChar(String s, char c) {
+        int j=0,p=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)==c){
+                p++;
+            }
+        }
+       int[] ans=new int[p];
+       int[] fin=new int[s.length()];
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)==c){
+                ans[j]=i;
+                j++;
+            }
+        }
+        int l=0;
+        for(int k=0;k<s.length();k++){
+            if(l<ans.length){
+            if(l>0){
+                int a=Math.abs(ans[l]-k);
+                int n=Math.abs(ans[l-1]-k);
+           fin[k]=Math.min(a,n);
+                           }
+                           else{
+                              fin[k]=Math.abs(ans[l]-k); 
+                           }
+            if(ans[l]==k){
+                l++;
+            }
+                           }
+            else{
+               fin[k]=Math.abs(ans[l-1]-k);  
+            }
+        }
+        return fin;
+    }
+}
