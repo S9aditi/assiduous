@@ -1,0 +1,21 @@
+class Solution {
+    int r=0,i=0,p=0;
+    public int[] decompressRLElist(int[] nums) {
+        for(int m=0;m<nums.length;m++){
+            if(m%2==0){
+                r=r+nums[m];
+            }
+        }
+        int[] ans=new int[r];
+        while(i<nums.length){
+        if(i%2==0){
+            for(int j=0;j<nums[i];j++){
+              ans[p]=nums[i+1];
+                p++;
+            }
+             }
+            i++;
+        } 
+        return ans;
+        }
+    }
