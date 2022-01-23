@@ -1,0 +1,18 @@
+class Solution {
+    public int findTheDistanceValue(int[] arr1, int[] arr2, int d) {
+        int p=0,c=0,i=0;
+        while(i<arr1.length){
+            for(int j=0;j<arr2.length;j++){
+                if(Math.abs(arr1[i]-arr2[j])<=d){
+                    c++;
+                    break;
+                }
+            }
+            if(c==0)
+               p++; 
+               c=0;
+            i++;
+        }
+        return p;
+    }
+}
