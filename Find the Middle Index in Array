@@ -1,0 +1,15 @@
+class Solution {
+    public int findMiddleIndex(int[] nums) {
+        int s=0,p=0;
+       for(int i=0;i<nums.length;i++){
+           s=s+nums[i];
+       }
+        for(int i=0;i<nums.length;i++){
+            s=s-nums[i];
+            if(s==p)
+                return i;
+                p=p+nums[i];
+        }
+        return -1;
+    }
+}
