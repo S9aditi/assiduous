@@ -1,0 +1,19 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int[] a=new int[s.length()];
+        int[] b=new int[t.length()];
+        int p=0;
+        for(int i=0;i<s.length();i++){
+            a[i]=(int)s.charAt(i);
+            b[i]=(int)t.charAt(i);
+        }
+        b[t.length()-1]=(int)t.charAt(t.length()-1);
+        for(int i=0;i<s.length();i++){
+            p=p^a[i];
+            p=p^b[i];
+        }
+        p=p^b[t.length()-1];
+        char m=(char)p;
+        return m;
+    }
+}
