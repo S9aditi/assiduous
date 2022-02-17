@@ -1,0 +1,17 @@
+class Solution {
+    public int[] countBits(int n) {
+        int[] arr=new int[n+1];
+        int i=1;
+        while (i<=n){
+           int c=0,j=i;
+            while(j!=0){
+                if((j&1)==1)
+                    c++;
+                j=j>>1;
+            }
+            arr[i]=c;
+            i++;
+        }
+        return arr;
+    }
+}
