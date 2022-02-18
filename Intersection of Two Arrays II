@@ -1,0 +1,19 @@
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int p=-1,c=0;
+        int[] s = new int[Math.min(nums1.length, nums2.length)];
+        for(int i=0;i<nums1.length;i++){
+            for(int j=p+1;j<nums2.length;j++){
+                    if(nums1[i]==nums2[j]){
+                       s[c]=nums1[i];
+                        p=j;
+                        j=nums2.length;
+                        c++;
+                    }
+            }
+        }
+        return Arrays.copyOf(s, c); 
+    }
+}
