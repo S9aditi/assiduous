@@ -1,0 +1,28 @@
+class Solution {
+    int k=0,c=0,maxlen=0;
+    public int countGoodRectangles(int[][] rectangles) {
+        int[] arr=new int[rectangles.length];
+        if(rectangles[0][0]<=rectangles[0][1]){
+            maxlen=rectangles[0][0];
+        }
+        else{
+            maxlen=rectangles[0][1];
+        }
+        for(int i=0;i<rectangles.length;i++){
+            arr[k]=Math.min(rectangles[i][0],rectangles[i][1]);
+            if(maxlen<arr[k]){
+                maxlen=arr[k];
+                k++;
+            }
+            else{
+                k++;
+            }
+        }
+        for(int j=0;j<rectangles.length;j++){
+            if(arr[j]==maxlen){
+                c++;
+            }
+        }
+        return c;
+    }
+}
