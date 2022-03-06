@@ -1,0 +1,19 @@
+class Solution {
+    int i=0,sum=0,p=0,k=0;
+    public int sumOddLengthSubarrays(int[] arr) {
+        for(int i=0;i<=arr.length;i++){
+        if(i%2!=0){
+            for(int j=0;j<arr.length-(i-1);j++){
+                k=j;
+             while(p<i){
+                 sum=sum+arr[k];
+                 k++;
+                 p++;
+             }
+                p=0;
+            }
+        }
+        }
+        return sum;
+    }
+}
