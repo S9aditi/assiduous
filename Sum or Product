@@ -1,0 +1,15 @@
+public class Solution {
+
+	public static long sumOrProduct(int n, int q) {
+         int i=1;
+        long s=0, p=1,mod=1000000007;
+        while(i<=n){
+            s=s+i;
+            p=(p*i)%mod;
+            i++;
+        }
+        if(q==1)
+        return s;
+        return p;
+	}
+}
