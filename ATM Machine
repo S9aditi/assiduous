@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int a;
+	scanf("%d",&a);
+	int t=0;
+	while(t<a){
+	  int n,k;
+	  scanf("%d",&n);
+	  scanf("%d",&k);
+	  int arr[n];
+	  for(int i=0;i<n;i++){
+	      scanf("%d",&arr[i]);
+	  }
+	  for(int i=0;i<n;i++){
+	      if(arr[i]<=k){
+	          int p=1;
+	          printf("%d",p);
+	          k=k-arr[i];
+	      }
+	      else{
+	          int p=0;
+	          printf("%d",p);
+	      }
+	  }
+	  t++;
+	 printf("\n");
+	}
+	
+	return 0;
+	
+}
