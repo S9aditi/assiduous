@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	// your code goes here
+	int n,i=0;
+	scanf("%d",&n);
+	while(i<n){
+	    int a,b;
+	    scanf("%d",&a);
+	    scanf("%d",&b);
+	    printf("%d\n",abs(b-a));
+	    i++;
+	}
+	return 0;
+}
+
